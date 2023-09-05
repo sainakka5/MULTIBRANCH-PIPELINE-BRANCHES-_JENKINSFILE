@@ -11,40 +11,30 @@ pipeline {
             }
         }
         
-    }
-    stages {
         stage('maven validate') {
             steps {
                 sh 'mvn validate'
             }
         }
-        
-    }
-    stages {
+   
         stage('maven compile') {
             steps {
                 sh 'mvn compile'
             }
         }
-        
-    }
-    stages {
+      
         stage('maven test ') {
             steps {
                 sh 'mvn test'
             }
         }
         
-    }
-    stages {
         stage('maven verify') {
             steps {
                 sh 'mvn verify'
             }
         }
         
-    }
-    stages {
         stage('maven install') {
             steps {
                 sh 'mvn install'
