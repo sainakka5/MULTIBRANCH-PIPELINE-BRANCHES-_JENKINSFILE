@@ -35,7 +35,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh 'mvn deploy'
+                sh 'mvn install'
                 // Add your deployment steps here
             }
         }
