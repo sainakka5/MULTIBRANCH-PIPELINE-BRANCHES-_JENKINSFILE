@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh "mvn checkout"
+                git branch: 'main', url: 'https://github.com/iamkishore0/maven_project.git'
                 // Check out your source code from your SCM repository here
                 // For example, you can use 'git' for Git repositories
                 // You may need to configure your SCM credentials
