@@ -19,7 +19,7 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build ') {
             steps {
                 sh "mvn compile"
                 // Add your build steps here
