@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven "mvn"
+    }
     
     triggers {
         pollSCM('* * * * *') // Schedule SCM polling at a specified interval (every minute in this example)
@@ -8,6 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                sh "mvn checkout"
                 // Check out your source code from your SCM repository here
                 // For example, you can use 'git' for Git repositories
                 // You may need to configure your SCM credentials
@@ -17,18 +21,21 @@ pipeline {
         
         stage('Build') {
             steps {
+                sh "mvn build"
                 // Add your build steps here
             }
         }
         
         stage('Test') {
             steps {
+                sh 'mvn test'
                 // Add your testing steps here
             }
         }
         
         stage('Deploy') {
             steps {
+                sh 'mvn deploy'
                 // Add your deployment steps here
             }
         }
